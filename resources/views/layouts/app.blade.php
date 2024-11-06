@@ -30,6 +30,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/css/jsvectormap.min.css"
         integrity="sha256-+uGLJmmTKOqBr+2E6KDYs/NRsHxSkONXFHUL0fy2O/4=" crossorigin="anonymous">
 
+    <!-- Tambahkan CSS DataTables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
+
+
     <!-- Toast CSS (gunakan Bootstrap) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
 
@@ -105,6 +109,26 @@
         <!-- Footer -->
         @include('layouts.partials.footer')
 
+
+        <!-- Tambahkan jQuery dan JS DataTables -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+
+        <!-- Inisialisasi DataTables -->
+        <script>
+            $(document).ready(function() {
+                $('#housekeepingTable').DataTable({
+                    "order": [
+                        [1, "asc"]
+                    ],
+                    "columnDefs": [{
+                        "orderable": true,
+                        "targets": [1, 3]
+                    }]
+                });
+            });
+        </script>
 </body><!--end::Body-->
 
 </html>

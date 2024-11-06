@@ -9,8 +9,8 @@
     <div class="sidebar-wrapper">
         <nav class="mt-2"> <!--begin::Sidebar Menu-->
             <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu" data-accordion="false">
-                <li class="nav-item menu-open">
-                    <a href="#" class="nav-link active">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
                         <i class="nav-icon bi bi-speedometer"></i>
                         <p>
                             Dashboard
@@ -57,37 +57,56 @@
                         <p>Guest</p>
                     </a>
                 </li>
-                <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-box-seam-fill"></i>
+                <li class="nav-item {{ request()->routeIs(['housekeeping.*', 'maintenance.*']) ? 'menu-open' : '' }}">
+                    <a href="#"
+                        class="nav-link {{ request()->routeIs(['housekeeping.*', 'maintenance.*']) ? 'active' : '' }}">
+                        <i class="nav-icon bi bi-clipboard-check-fill"></i>
                         <p>
-                            Widgets
+                            Housekeeping
                             <i class="nav-arrow bi bi-chevron-right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <li class="nav-item"> <a href="./widgets/small-box.html" class="nav-link"> <i
-                                    class="nav-icon bi bi-circle"></i>
-                                <p>Small Box</p>
-                            </a> </li>
-                        <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"> <i
-                                    class="nav-icon bi bi-circle"></i>
-                                <p>info Box</p>
-                            </a> </li>
-                        <li class="nav-item"> <a href="./widgets/cards.html" class="nav-link"> <i
-                                    class="nav-icon bi bi-circle"></i>
-                                <p>Cards</p>
-                            </a> </li>
+                        <li class="nav-item">
+                            <a href="{{ route('housekeeping.index') }}"
+                                class="nav-link {{ request()->routeIs('housekeeping.*') ? 'active' : '' }}">
+                                <i class="nav-icon bi bi-calendar-check"></i>
+                                <p>Housekeeping Schedule</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('items.index') }}"
+                                class="nav-link {{ request()->routeIs('items.index') ? 'active' : '' }}">
+                                <i class="nav-icon bi bi-clipboard-data"></i>
+                                <p>Manage Items</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('maintenance.index') }}"
+                                class="nav-link {{ request()->routeIs('maintenance.*') ? 'active' : '' }}">
+                                <i class="nav-icon bi bi-gear-fill"></i>
+                                <p>Room Maintenance</p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
 
-                <li class="nav-header">DOCUMENTATIONS</li>
-                <li class="nav-item"> <a href="./docs/introduction.html" class="nav-link"> <i
-                            class="nav-icon bi bi-download"></i>
-                        <p>Installation</p>
-                    </a> </li>
-                <li class="nav-item"> <a href="./docs/layout.html" class="nav-link"> <i
-                            class="nav-icon bi bi-grip-horizontal"></i>
-                        <p>Layout</p>
-                    </a> </li>
+            </ul>
+            </li>
+
+            <li class="nav-header">DOCUMENTATIONS</li>
+            <li class="nav-item"> <a href="./docs/introduction.html" class="nav-link"> <i
+                        class="nav-icon bi bi-download"></i>
+                    <p>Installation</p>
+                </a> </li>
+            <li class="nav-item"> <a href="./docs/layout.html" class="nav-link"> <i
+                        class="nav-icon bi bi-grip-horizontal"></i>
+                    <p>Layout</p>
+                </a> </li>
 
             </ul> <!--end::Sidebar Menu-->
         </nav>
