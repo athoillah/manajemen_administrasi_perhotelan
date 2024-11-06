@@ -43,14 +43,16 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="{{ route('reservations.index') }}"
+                        class="nav-link {{ request()->routeIs('reservations.*') ? 'active' : '' }}">
                         <i class="nav-icon bi bi-journal-bookmark"></i>
                         <p>Reservation</p>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="{{ route('guests.index') }}"
+                        class="nav-link {{ request()->routeIs('guests.*') ? 'active' : '' }}">
                         <i class="nav-icon bi bi-people"></i>
                         <p>Guest</p>
                     </a>
