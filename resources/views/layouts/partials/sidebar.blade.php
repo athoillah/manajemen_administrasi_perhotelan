@@ -57,9 +57,10 @@
                         <p>Guest</p>
                     </a>
                 </li>
-                <li class="nav-item {{ request()->routeIs(['housekeeping.*', 'maintenance.*']) ? 'menu-open' : '' }}">
+                <li
+                    class="nav-item {{ request()->routeIs(['housekeeping.*', 'maintenance.*', 'items.*', 'inventory_categories.*', 'inventory_items.*']) ? 'menu-open' : '' }}">
                     <a href="#"
-                        class="nav-link {{ request()->routeIs(['housekeeping.*', 'maintenance.*']) ? 'active' : '' }}">
+                        class="nav-link {{ request()->routeIs(['housekeeping.*', 'maintenance.*', 'items.*', 'inventory_categories.*', 'inventory_items.*']) ? 'active' : '' }}">
                         <i class="nav-icon bi bi-clipboard-check-fill"></i>
                         <p>
                             Housekeeping
@@ -78,9 +79,9 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{ route('items.index') }}"
-                                class="nav-link {{ request()->routeIs('items.index') ? 'active' : '' }}">
+                                class="nav-link {{ request()->routeIs('items.*') ? 'active' : '' }}">
                                 <i class="nav-icon bi bi-clipboard-data"></i>
-                                <p>Manage Items</p>
+                                <p>Maintenance Items</p>
                             </a>
                         </li>
                     </ul>
@@ -90,6 +91,24 @@
                                 class="nav-link {{ request()->routeIs('maintenance.*') ? 'active' : '' }}">
                                 <i class="nav-icon bi bi-gear-fill"></i>
                                 <p>Room Maintenance</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('inventory_categories.index') }}"
+                                class="nav-link {{ request()->routeIs('inventory_categories.*') ? 'active' : '' }}">
+                                <i class="nav-icon bi bi-list-ul"></i>
+                                <p>Inventory Categories</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('inventory_items.index') }}"
+                                class="nav-link {{ request()->routeIs('inventory_items.*') ? 'active' : '' }}">
+                                <i class="nav-icon bi bi-archive"></i>
+                                <p>Manage Items</p>
                             </a>
                         </li>
                     </ul>
