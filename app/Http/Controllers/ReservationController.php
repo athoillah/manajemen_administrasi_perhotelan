@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Reservation;
 use App\Models\Guest;
 use App\Models\Room;
+use Illuminate\Support\Facades\Session;
 
 
 class ReservationController extends Controller
@@ -32,8 +33,25 @@ class ReservationController extends Controller
             'check_out' => 'required|date|after:check_in',
         ]);
 
+        // Cek apakah ada reservasi lain di kamar dan tanggal yang sama
+        $existingReservation = Reservation::where('room_id', $request->room_id)
+            ->where(function ($query) use ($request) {
+                $query->whereBetween('check_in', [$request->check_in, $request->check_out])
+                    ->orWhereBetween('check_out', [$request->check_in, $request->check_out]);
+            })
+            ->exists();
+
+        // Jika sudah ada reservasi, kirim notifikasi toast
+        if ($existingReservation) {
+            Session::flash('error', 'Room is already reserved on the selected dates.');
+            return redirect()->back()->withInput();
+        }
+
+        // Jika tidak ada konflik, buat reservasi baru
         Reservation::create($request->all());
-        return redirect()->route('reservations.index')->with('success', 'Reservation created successfully.');
+
+        Session::flash('success', 'Reservation created successfully.');
+        return redirect()->route('reservations.index');
     }
 
     public function edit($id)

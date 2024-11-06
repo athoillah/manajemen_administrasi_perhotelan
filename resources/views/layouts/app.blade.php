@@ -29,7 +29,15 @@
         integrity="sha256-4MX+61mt9NVvvuPjUWdUdyfZfxSB1/Rf9WtqRHgG5S0=" crossorigin="anonymous"><!-- jsvectormap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/css/jsvectormap.min.css"
         integrity="sha256-+uGLJmmTKOqBr+2E6KDYs/NRsHxSkONXFHUL0fy2O/4=" crossorigin="anonymous">
+
+    <!-- Toast CSS (gunakan Bootstrap) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+
+    <!-- Toast JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+
 </head> <!--end::Head-->
+
 <!--begin::Body-->
 
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary"> <!--begin::App Wrapper-->
@@ -45,7 +53,52 @@
         <main class="app-main"> <!--begin::App Content Header-->
             <div class="app-content"> <!--begin::Container-->
                 <div class="container-fluid"> <!--begin::Row-->
+                    <div aria-live="polite" aria-atomic="true" class="position-relative">
+                        <div class="toast-container position-fixed top-0 end-0 p-5">
+
+                            <!-- Toast untuk pesan sukses -->
+                            @if (Session::has('success'))
+                                <div class="toast align-items-center text-bg-success border-0" role="alert"
+                                    aria-live="assertive" aria-atomic="true">
+                                    <div class="d-flex">
+                                        <div class="toast-body">
+                                            {{ Session::get('success') }}
+                                        </div>
+                                        <button type="button" class="btn-close btn-close-white me-2 m-auto"
+                                            data-bs-dismiss="toast" aria-label="Close"></button>
+                                    </div>
+                                </div>
+                            @endif
+
+                            <!-- Toast untuk pesan error -->
+                            @if (Session::has('error'))
+                                <div class="toast align-items-center text-bg-danger border-0" role="alert"
+                                    aria-live="assertive" aria-atomic="true">
+                                    <div class="d-flex">
+                                        <div class="toast-body">
+                                            {{ Session::get('error') }}
+                                        </div>
+                                        <button type="button" class="btn-close btn-close-white me-2 m-auto"
+                                            data-bs-dismiss="toast" aria-label="Close"></button>
+                                    </div>
+                                </div>
+                            @endif
+
+                        </div>
+                    </div>
                     @yield('content')
+
+
+                    <script>
+                        // Aktifkan toast saat halaman dimuat
+                        document.addEventListener("DOMContentLoaded", function() {
+                            var toastElList = [].slice.call(document.querySelectorAll('.toast'));
+                            var toastList = toastElList.map(function(toastEl) {
+                                return new bootstrap.Toast(toastEl);
+                            });
+                            toastList.forEach(toast => toast.show());
+                        });
+                    </script>
                 </div>
             </div>
         </main> <!--end::App Main--> <!--begin::Footer-->
