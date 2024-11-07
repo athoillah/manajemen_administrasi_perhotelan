@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RoomTypeController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\ReservationController;
@@ -21,6 +22,7 @@ use App\Http\Controllers\AssetController;
 Route::get('/', function () {
     return view('dashboard');
 });
+Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
 Route::resource('room_types', RoomTypeController::class);
 Route::resource('rooms', RoomController::class);
