@@ -114,6 +114,31 @@
                     </ul>
                 </li>
 
+                <li
+                    class="nav-item {{ request()->routeIs(['departments.*', 'maintenance.*', 'items.*', 'inventory_categories.*', 'inventory_items.*']) ? 'menu-open' : '' }}">
+                    <a href="#"
+                        class="nav-link {{ request()->routeIs(['departments.*', 'maintenance.*', 'items.*', 'inventory_categories.*', 'inventory_items.*']) ? 'active' : '' }}">
+                        <i class="nav-icon bi bi-clipboard-check-fill"></i>
+                        <p>
+                            Management Assets
+                            <i class="nav-arrow bi bi-chevron-right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('departments.index') }}"
+                                class="nav-link {{ request()->routeIs('departments.*') ? 'active' : '' }}">
+                                <i class="nav-icon bi bi-calendar-check"></i>
+                                <p>Departments</p>
+                            </a>
+                        </li>
+                    </ul>
+
+
+
+
+                </li>
+
             </ul>
             </li>
 

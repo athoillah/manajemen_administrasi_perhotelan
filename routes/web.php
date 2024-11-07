@@ -10,6 +10,8 @@ use App\Http\Controllers\RoomMaintenanceController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\InventoryCategoryController;
 use App\Http\Controllers\InventoryItemController;
+use App\Http\Controllers\DepartmentController;
+
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -28,3 +30,6 @@ Route::resource('maintenance', RoomMaintenanceController::class);
 Route::resource('items', ItemController::class);
 Route::resource('inventory_categories', InventoryCategoryController::class);
 Route::resource('inventory_items', InventoryItemController::class);
+
+
+Route::resource('departments', DepartmentController::class);
