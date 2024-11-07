@@ -16,13 +16,13 @@ class Department extends Model
     ];
 
     /**
-     * Relasi ke model Employee
-     * Setiap departemen dapat memiliki banyak karyawan
+     * Relasi ke model AssetResponsible
+     * Setiap departemen dapat memiliki banyak penanggung jawab aset
      */
-    // public function employees()
-    // {
-    //     return $this->hasMany(Employee::class);
-    // }
+    public function responsibles()
+    {
+        return $this->hasMany(AssetResponsible::class);
+    }
 
     /**
      * Relasi ke model Asset atau model lain yang memerlukan referensi ke departemen
