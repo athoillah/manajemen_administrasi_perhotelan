@@ -114,9 +114,10 @@
                     </ul>
                 </li>
 
-                <li class="nav-item {{ request()->routeIs(['departments.*', 'responsibles.*']) ? 'menu-open' : '' }}">
+                <li
+                    class="nav-item {{ request()->routeIs(['departments.*', 'responsibles.*', 'asset_categories.*']) ? 'menu-open' : '' }}">
                     <a href="#"
-                        class="nav-link {{ request()->routeIs(['departments.*', 'responsibles.*']) ? 'active' : '' }}">
+                        class="nav-link {{ request()->routeIs(['departments.*', 'responsibles.*', 'asset_categories.*']) ? 'active' : '' }}">
                         <i class="nav-icon bi bi-clipboard-check-fill"></i>
                         <p>
                             Management Assets
@@ -138,6 +139,15 @@
                                 class="nav-link {{ request()->routeIs('responsibles.*') ? 'active' : '' }}">
                                 <i class="nav-icon bi bi-calendar-check"></i>
                                 <p>Responsibles</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('asset_categories.index') }}"
+                                class="nav-link {{ request()->routeIs('asset_categories.*') ? 'active' : '' }}">
+                                <i class="nav-icon bi bi-calendar-check"></i>
+                                <p>Asset Categories</p>
                             </a>
                         </li>
                     </ul>

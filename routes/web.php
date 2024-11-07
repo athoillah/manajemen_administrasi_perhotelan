@@ -12,6 +12,8 @@ use App\Http\Controllers\InventoryCategoryController;
 use App\Http\Controllers\InventoryItemController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\AssetResponsibleController;
+use App\Http\Controllers\AssetCategoryController;
+
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -34,3 +36,4 @@ Route::resource('inventory_items', InventoryItemController::class);
 
 Route::resource('departments', DepartmentController::class);
 Route::resource('responsibles', AssetResponsibleController::class);
+Route::resource('asset_categories', AssetCategoryController::class);
