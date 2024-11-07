@@ -9,7 +9,7 @@
     <div class="sidebar-wrapper">
         <nav class="mt-2"> <!--begin::Sidebar Menu-->
             <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu" data-accordion="false">
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon bi bi-speedometer"></i>
                         <p>
@@ -25,6 +25,12 @@
                             </a>
                         </li>
                     </ul>
+                </li> --}}
+                <li class="nav-item">
+                    <a href=" {{ url('/') }} " class="nav-link">
+                        <i class="bi bi-speedometer2"></i>
+                        <p>Dashboard</p>
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('room_types.index') }}"
@@ -115,10 +121,10 @@
                 </li>
 
                 <li
-                    class="nav-item {{ request()->routeIs(['departments.*', 'responsibles.*', 'asset_categories.*']) ? 'menu-open' : '' }}">
+                    class="nav-item {{ request()->routeIs(['departments.*', 'responsibles.*', 'asset_categories.*', 'assets.*']) ? 'menu-open' : '' }}">
                     <a href="#"
-                        class="nav-link {{ request()->routeIs(['departments.*', 'responsibles.*', 'asset_categories.*']) ? 'active' : '' }}">
-                        <i class="nav-icon bi bi-clipboard-check-fill"></i>
+                        class="nav-link {{ request()->routeIs(['departments.*', 'responsibles.*', 'asset_categories.*', 'assets.*']) ? 'active' : '' }}">
+                        <i class="nav-icon bi bi-box-seam"></i>
                         <p>
                             Management Assets
                             <i class="nav-arrow bi bi-chevron-right"></i>
@@ -128,7 +134,7 @@
                         <li class="nav-item">
                             <a href="{{ route('departments.index') }}"
                                 class="nav-link {{ request()->routeIs('departments.*') ? 'active' : '' }}">
-                                <i class="nav-icon bi bi-calendar-check"></i>
+                                <i class="nav-icon bi bi-building"></i>
                                 <p>Departments</p>
                             </a>
                         </li>
@@ -137,7 +143,7 @@
                         <li class="nav-item">
                             <a href="{{ route('responsibles.index') }}"
                                 class="nav-link {{ request()->routeIs('responsibles.*') ? 'active' : '' }}">
-                                <i class="nav-icon bi bi-calendar-check"></i>
+                                <i class="nav-icon bi bi-person-badge"></i>
                                 <p>Responsibles</p>
                             </a>
                         </li>
@@ -146,12 +152,20 @@
                         <li class="nav-item">
                             <a href="{{ route('asset_categories.index') }}"
                                 class="nav-link {{ request()->routeIs('asset_categories.*') ? 'active' : '' }}">
-                                <i class="nav-icon bi bi-calendar-check"></i>
+                                <i class="nav-icon bi bi-list-ul"></i>
                                 <p>Asset Categories</p>
                             </a>
                         </li>
                     </ul>
-
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('assets.index') }}"
+                                class="nav-link {{ request()->routeIs('assets.*') ? 'active' : '' }}">
+                                <i class="nav-icon bi bi-archive"></i>
+                                <p>Assets</p>
+                            </a>
+                        </li>
+                    </ul>
 
 
                 </li>
