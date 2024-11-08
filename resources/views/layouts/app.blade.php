@@ -118,7 +118,7 @@
         <!-- Inisialisasi DataTables -->
         <script>
             $(document).ready(function() {
-                $('#housekeepingTable').DataTable({
+                $('#shortTable').DataTable({
                     "order": [
                         [1, "asc"]
                     ],

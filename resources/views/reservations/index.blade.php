@@ -4,17 +4,17 @@
     <div class="col-md-12">
         <div class="card mb-4 shadow-sm">
             <div class="card-header d-flex justify-content-between align-items-center">
-                <div class="col-md-10">
-                <h3>Reservations</h3>
-            </div>
-                <div class="col-md-2 text-end">
+                <div class="col-md-9">
+                    <h3>Reservations</h3>
+                </div>
+                <div class="col-md-3 text-end">
                     <a href="{{ route('reservations.create') }}" class="btn btn-primary">
                         <i class="bi bi-plus-lg"></i> Add New Reservation
                     </a>
                 </div>
             </div>
-            <div class="card-body p-0">
-                <table class="table table-hover table-striped table-bordered mb-0">
+            <div class="card-body p-2">
+                <table class="table table-hover table-striped table-bordered mb-0" id="shortTable">
                     <thead class="table-light">
                         <tr>
                             <th>Guest</th>

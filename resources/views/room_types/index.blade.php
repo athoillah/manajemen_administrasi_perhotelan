@@ -4,16 +4,14 @@
     <div class="col-md-12">
         <div class="card mb-4 shadow-sm">
             <div class="card-header d-flex justify-content-between align-items-center">
-                <div class="col-md-10">
+                <div class="col-md-9">
                     <h3 class="mb-0">Room Types</h3>
                 </div>
-                <div class="col-md-2 text-end">
+                <div class="col-md-3 text-end">
                     <a href="{{ route('room_types.create') }}" class="btn btn-primary">
-                        <i class="fas fa-plus"></i> Add New Room Type
+                        <i class="bi bi-plus"></i> Add Room Type
                     </a>
                 </div>
-
-
             </div>
             <div class="card-body p-0">
                 <table class="table table-hover table-striped table-bordered mb-0">
