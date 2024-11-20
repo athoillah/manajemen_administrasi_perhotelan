@@ -75,11 +75,11 @@ Database seperti MySQL, PostgreSQL, SQLite, dll (tergantung aplikasi Laravel yan
 
 2. Clone Repository dari GitHub
 
-git clone https://github.com/athoillah1st/hotel_inventory_system.git
+git clone https://github.com/athoillah/manajemen_administrasi_perhotelan.git
 
 3. Masuk ke Direktori Aplikasi
 
-cd hotel_inventory_system
+cd manajemen_administrasi_perhotelan
 
 4. Instal Dependensi dengan Composer
 
