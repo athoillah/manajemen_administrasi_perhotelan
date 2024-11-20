@@ -64,3 +64,67 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+## LANGKAH-LANGKAH INSTALASI :
+1. Pastikan Anda sudah menginstal perangkat lunak berikut:
+
+PHP (Versi yang sesuai dengan aplikasi Laravel, biasanya PHP 8.0 atau lebih tinggi)
+Composer (untuk manajemen dependensi Laravel)
+Database seperti MySQL, PostgreSQL, SQLite, dll (tergantung aplikasi Laravel yang diunduh)
+
+2. Clone Repository dari GitHub
+
+git clone https://github.com/athoillah1st/hotel_inventory_system.git
+
+3. Masuk ke Direktori Aplikasi
+
+cd hotel_inventory_system
+
+4. Instal Dependensi dengan Composer
+
+composer install
+
+4. Instal Dependensi npm
+
+npm install
+
+npm run dev
+
+5. Menyalin File .env dan Konfigurasi
+
+cp .env.example .env
+
+6. Mengatur Kunci Aplikasi (Application Key)
+
+php artisan key:generate
+
+7. Konfigurasi Database dan Pengaturan Lainnya
+Buka file .env dan sesuaikan pengaturan database dan konfigurasi lainnya sesuai kebutuhan aplikasi. Misalnya, atur pengaturan database Anda:
+
+DB_CONNECTION=mysql
+
+DB_HOST=127.0.0.1
+
+DB_PORT=3306
+
+DB_DATABASE=nama_database
+
+DB_USERNAME=root
+
+DB_PASSWORD=
+
+8. Migrate Database
+
+php artisan migrate
+
+9. Menjalankan Server Development
+
+php artisan serve
+
+Secara default, aplikasi Laravel akan dijalankan di http://localhost:8000. 
+Buka URL tersebut di browser untuk melihat aplikasi Anda.
+
+10. Jika ada error, coba jalankan perintah :
+
+php artisan optimize
