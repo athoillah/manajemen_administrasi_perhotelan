@@ -69,7 +69,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 ## LANGKAH-LANGKAH INSTALASI :
 1. Pastikan Anda sudah menginstal perangkat lunak berikut:
 
-PHP (Versi yang sesuai dengan aplikasi Laravel, biasanya PHP 8.0 atau lebih tinggi)
+PHP (Versi yang sesuai dengan aplikasi Laravel, biasanya PHP 8.2 atau lebih tinggi)
 Composer (untuk manajemen dependensi Laravel)
 Database seperti MySQL, PostgreSQL, SQLite, dll (tergantung aplikasi Laravel yang diunduh)
 
